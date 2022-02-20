@@ -1,0 +1,9 @@
+FROM golang:latest
+
+WORKDIR $GOPATH/src/fire-scaffold
+COPY .. $GOPATH/src/fire-scaffold
+
+RUN go build .
+
+EXPOSE 8080 
+ENTRYPOINT ["./test"]
