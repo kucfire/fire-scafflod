@@ -24,7 +24,3 @@ func TestWriteHeader(t *testing.T) {
 		writer.WriteHeader(code2)
 	})
 }
-
-func TestNewWriter(t *testing.T) {
-	NewWriter()
-}
