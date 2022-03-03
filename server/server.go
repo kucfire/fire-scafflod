@@ -6,7 +6,8 @@ import (
 	"net/http"
 	"time"
 
-	"github.com/e421083458/golang_common/lib"
+	"fire-scaffold/conf"
+
 	"github.com/gin-gonic/gin"
 )
 
@@ -45,10 +46,10 @@ func New(mode, addr string, opts ...Option) *HttpServer {
 
 func (h *HttpServer) Run() {
 	go func() {
-		log.Printf(" [INFO] HttpServerRun:%s\n", lib.GetStringConf("base.http.addr"))
+		log.Printf(" [INFO] HttpServerRun:%s\n", conf.GlobalConfig.HTTP.Addr)
 
 		if err := h.Server.ListenAndServe(); err != nil && err != http.ErrServerClosed {
-			log.Fatalf(" [ERROR] HttpServerRun:%s err:%v\n", lib.GetStringConf("base.http.addr"), err)
+			log.Fatalf(" [ERROR] HttpServerRun:%s err:%v\n", conf.GlobalConfig.HTTP.Addr, err)
 		}
 	}()
 }

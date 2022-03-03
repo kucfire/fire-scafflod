@@ -16,8 +16,18 @@ type HTTP struct {
 	MaxHeaderBytes int           `yaml:"max_header_bytes"`
 }
 
+type Redis struct {
+	Addr         string `yaml:"addr"`
+	Pass         string `yaml:"pass"`
+	Db           int    `yaml:"db"`
+	MaxRetries   int    `yaml:"maxRetries"`
+	PoolSize     int    `yaml:"poolSize"`
+	MinIdleConns int    `yaml:"minIdleConns"`
+}
+
 type Config struct {
-	HTTP HTTP `yaml:"http"`
+	HTTP  HTTP  `yaml:"http"`
+	Redis Redis `yaml:"redis"`
 }
 
 var GlobalConfig Config
