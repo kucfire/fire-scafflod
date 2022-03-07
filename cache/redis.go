@@ -73,7 +73,7 @@ func New() Cache {
 	}
 }
 
-func (c *cache) i()
+func (c *cache) i() {}
 
 func (c *cache) Set(key, value string, ttl time.Duration, options ...Option) error {
 	now := time.Now()

@@ -60,7 +60,7 @@ func New(id string) *Trace {
 	}
 }
 
-func (t *Trace) i()
+func (t *Trace) i() {}
 
 func (t *Trace) ID() string {
 	return t.Identifier

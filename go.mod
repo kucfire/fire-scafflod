@@ -3,7 +3,6 @@ module fire-scaffold
 go 1.14
 
 require (
-	github.com/e421083458/golang_common v1.2.1
 	github.com/gin-gonic/gin v1.7.7
 	github.com/go-redis/redis v6.15.9+incompatible
 	github.com/google/go-cmp v0.5.6 // indirect

@@ -3,14 +3,16 @@ package main
 import (
 	"fmt"
 	"log"
+	"time"
 
 	"fire-scaffold/cache"
 	"fire-scaffold/conf"
 	"fire-scaffold/pkg/shutdown"
+	"fire-scaffold/pkg/ws"
 	"fire-scaffold/server"
 )
 
-func main() {
+func tt() {
 	conf.InitConfig("./conf/dev-env.yaml")
 
 	if err := cache.InitRedis(conf.GlobalConfig.Redis); err != nil {
@@ -38,4 +40,12 @@ func main() {
 			server.Stop()
 		},
 	)
+}
+
+func main() {
+	go ws.DemoServer()
+
+	time.Sleep(10 * time.Second)
+
+	ws.DemoClient()
 }
